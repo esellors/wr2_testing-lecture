@@ -1,16 +1,13 @@
 const { sum, add, subtract, multiply, divide, sayHello, fetchUser } = require('../functions')
 
-// Go over methods & matchers https://jestjs.io/docs/en/expect
-  // (Have this open and show docs for each method below when covering them)
-  // Were going to focus on just expect today (show doc for this)
-    // test method takes two arguments: the first is a description, the second is a callback storing the test logic
-
+// methods & matchers https://jestjs.io/docs/en/expect
+    
 // NOTE: test and describe are two "globals" that we can use without importing
 
 // // INDIVIDUAL TESTS
 
 // TO BE - RETURN NUMBER EXAMPLE
-test('sum() should add two numbers', () => {
+test('sum() should add two numbers', () => { // test method takes two arguments: the first is a description, the second is a callback storing the test logic
   
   expect(sum(1, 2)).toBe(3);
 });
@@ -24,9 +21,8 @@ test('sum() should return a number', () => {
 
 // REFERENCE TYPES AND TOBE VS TOEQUAL
 test('Reference Types are special', () => {
-  // SHOW HOW TOBE WILL FAIL (REFERENCE TYPES ARE SPECIAL)
-  // Reference the following to show primitive types and reference types are special
-  // // https://jestjs.io/docs/en/expect#tobevalue
+  // TOBE WILL FAIL (REFERENCE TYPES ARE SPECIAL)
+    // https://jestjs.io/docs/en/expect#tobevalue
   expect([12]).toEqual([12]);
 });
 
@@ -86,7 +82,7 @@ test('Names array should not contain Preston', () => {
 
 // TEST API CALL
 test("User name is Leanne", async () => {
-  // Show docs for assertions https://jestjs.io/docs/en/expect#expectassertionsnumber
+  // Docs for assertions https://jestjs.io/docs/en/expect#expectassertionsnumber
     // Our assertion here is fetchUser()
   expect.assertions(1);
   const data = await fetchUser();
@@ -125,9 +121,9 @@ describe("Math functions:", () => {
 // TEST OBJECT METHODS - BANK ACCOUNT EXAMPLE
 
 // A FEW MORE GLOBALS THAT COULD BE USEFUL - more in docs
-  // Show the following as reference https://jestjs.io/docs/en/api
+  // Reference https://jestjs.io/docs/en/api
   // We will show an example of beforeEach() and afterAll()
-// Describe the following as common globals
+// Common globals
   // - beforeEach(() => {
   // -- fires before each test
   // - afterEach(() => {

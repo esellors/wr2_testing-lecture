@@ -27,11 +27,16 @@ it('Renders todos', async () => {
   
     // To prepare a component for assertions, wrap the code rendering it and performing updates inside an act() call.
       // act comes to us from React's testing utilities 
+      // Reference https://reactjs.org/docs/test-utils.html#act
+
     await act(async () => {
       const { container } = render(<Todos />)
+
+      // We update the value of component which is in the scope next up
       component = container;
-      // Grabs the dom container from the Todos component and reassigns it to the component variable
+      // Grabs the dom container from the Todos component and assigns it to the component variable
     })
   
+    // Since we now have what we need, we can see if the text content is what we want it to be
     expect(component.textContent).toContain('test title')
   })

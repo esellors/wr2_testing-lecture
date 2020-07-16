@@ -1,12 +1,13 @@
 // Start by importing react and Header
 
 import React from 'react'
-// import the next when needed
 import { render, fireEvent } from '@testing-library/react'
 import Header from '../Components/Header'
 
 
 // Let's write our first test
+
+// Like Jest has expect, RTL has 'it'
 it('Does not show dropdown when mounted', () => {
   // We can grab elements from the DOM using methods similarly to how we do w/ vanilla JS
     // RTL has its own methods though, don't use vanilla methods
@@ -14,7 +15,7 @@ it('Does not show dropdown when mounted', () => {
   // We'll get our first item using queryByTestId
 
   // We will destructure queryByTestId from render and point it at our Header component using the render method from the testing library
-  // import above.
+  // render imported at the top of file
   const { queryByTestId } = render(<Header />)
 
   // Now we want to grab our dropdown
@@ -37,7 +38,7 @@ it('Shows dropdown when hamburger is clicked', () => {
     // queryByTestId and getByTestId are very similar. 
       // The difference between the two is that getByTestId will throw an error when it can't find the element and queryByTestId will return null 
         // (destructure from render above)
-  const hamburger = getByTestId('hamburger-button')
+  const hamburger = getByTestId('hamburger-button') // 'hamburger-button' is the attribute name we gave in Header.js
 
   // Next, we'll simulate a user click
   // We do this with the fireEvent method (destructure at top)
